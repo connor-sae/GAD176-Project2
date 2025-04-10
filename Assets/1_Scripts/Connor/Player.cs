@@ -22,6 +22,9 @@ namespace GAD176.Connor
         public float minLookVertical = -90;
         float cameraYAngle;
 
+        [Header("Other")]
+        public Animator playerAnimater;
+
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -35,13 +38,17 @@ namespace GAD176.Connor
 
         void Movement()
         {
-            Vector2 movement = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+            Vector2 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
             float speed;
+
+            crouching = Input.GetKey(KeyCode.LeftControl);
 
             if (crouching)
                 speed = crouchSpeed;
             else
                 speed = walkSpeed;
+
+                
             if (movement.magnitude > 0)
             {
                 float movementAngle = Mathf.Atan2(movement.x, movement.y) * Mathf.Rad2Deg;
@@ -51,6 +58,9 @@ namespace GAD176.Connor
 
                 transform.position += playerRotator.transform.forward * speed * Time.deltaTime;
             }
+
+            playerAnimater.SetBool("Crouching", crouching);
+            playerAnimater.SetFloat("Movement", movement.magnitude);
         }
 
         void Look()
