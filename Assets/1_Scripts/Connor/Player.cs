@@ -79,6 +79,12 @@ namespace GAD176.Connor
 
             cameraYAngle = lookHorizontal;
         }
+
+        void AlertEnemies(float range)
+        {
+            GameEvents.AlertEnemies(transform.position, range);
+        }
+
     }
 
 }
