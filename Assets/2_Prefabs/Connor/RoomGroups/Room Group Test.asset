@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80994f3fdd8a3da43b2da0d83dceb90c, type: 3}
+  m_Name: Room Group Test
+  m_EditorClassIdentifier: 
+  roomsDictionaryAssignment:
+  - type: square_small_1
+    gameObjects:
+    - {fileID: 3957848932853245622, guid: e590478d87355d34da5b85b20e00d55e, type: 3}
+    - {fileID: 148478212570774078, guid: c72a0a28ae2985b40b5d84d0af3345a0, type: 3}
+  propsDictionaryAssignment:
+  - type: small
+    gameObjects:
+    - {fileID: 5150399054472067720, guid: a6b1e88ae37a23944b9bae979547b44f, type: 3}
+    - {fileID: 8926725306507892424, guid: a66fb0c92aa328d4388e822bd0e62f36, type: 3}
+  - type: large
+    gameObjects:
+    - {fileID: 8209803507835637480, guid: fddcabf9095a2a4478957ad84f768bf3, type: 3}
+    - {fileID: 7051286426899678061, guid: 3afa5ad3a7528c6488cbafa241c609db, type: 3}
+    - {fileID: 8926725306507892424, guid: 3555cc33f7e047242a66db17c222fc7c, type: 3}
