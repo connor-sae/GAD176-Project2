@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80994f3fdd8a3da43b2da0d83dceb90c, type: 3}
+  m_Name: Urban
+  m_EditorClassIdentifier: 
+  roomsDictionaryAssignment:
+  - type: T_out
+    gameObjects:
+    - {fileID: 154098028167248109, guid: bbd0f230cf03ec34c8acd08664b7c32e, type: 3}
+    - {fileID: 7575923421101488244, guid: 103f13b1e4495c643a5505f73ce1ac79, type: 3}
+    - {fileID: 7762113187606322569, guid: 54cfd10b9cd4df145bf7e2c2aa465135, type: 3}
+  - type: C_out
+    gameObjects:
+    - {fileID: 5881669397923659602, guid: 658c850fbe7b7194f86b2f7c7251160f, type: 3}
+    - {fileID: 5856041694965671056, guid: 2631407736075704a91a6c3faa30b942, type: 3}
+    - {fileID: 6734486349246032166, guid: 712e4079c09f82e4f805da8d4f91380d, type: 3}
+  - type: L_out
+    gameObjects:
+    - {fileID: 8449610970450012200, guid: e1c64cc880d74494aa072c3c8391dcc9, type: 3}
+    - {fileID: 3197116571528539998, guid: d34c5b573e1bcfb4f829d27e93c3c41e, type: 3}
+  propsDictionaryAssignment:
+  - type: small
+    gameObjects:
+    - {fileID: 3464478560439010882, guid: a88ea76f6c6d3ea4ca92fac6887f68e5, type: 3}
+    - {fileID: 645791579883567419, guid: 428ef9a3aa355c441b8e6592c4b4d54a, type: 3}
+    - {fileID: 2624877705318820261, guid: f79ac034cf3ebec4ca5882f76da03880, type: 3}
+    - {fileID: 5526802790530087472, guid: df89da24177975743bfa877ed83e79f1, type: 3}
+    - {fileID: 7296374938011459811, guid: c2b7067123d6e3c48bccd7b73aaa13c1, type: 3}
+    - {fileID: 1095129538509975022, guid: b6d53fed2e03e9c48815f48916951d0c, type: 3}
+    - {fileID: 3001365619238490477, guid: 3f6da34171ddd9743a44c6c349e48fda, type: 3}
+    - {fileID: 465125842901574646, guid: c8e87504e838ff84bab84c0030aa004b, type: 3}
+    - {fileID: 7819265099681939422, guid: 1306b1b3fe4ad764aa626b498d2da715, type: 3}
+  - type: medium
+    gameObjects:
+    - {fileID: 8872524616385372655, guid: 81410bc785de00f479aed70858abb063, type: 3}
+    - {fileID: 8417054433717769642, guid: b063e1f890caedd449a4927e69cc2be3, type: 3}
+    - {fileID: 3550446972920446744, guid: c92a972bf75c9d544b558b54653e11c4, type: 3}
+    - {fileID: 374906945115326097, guid: ba585003b4c1ac34988f5f811afc1fb9, type: 3}
+    - {fileID: 374906945115326097, guid: ba585003b4c1ac34988f5f811afc1fb9, type: 3}
+    - {fileID: 7691982303424275165, guid: 48fcdda0023daff40853ee466cd93441, type: 3}
+    - {fileID: 7691982303424275165, guid: 48fcdda0023daff40853ee466cd93441, type: 3}
+    - {fileID: 5500256864895325563, guid: dfbebf4a08787054a9a0cc217e229af9, type: 3}
+  - type: large
+    gameObjects:
+    - {fileID: 5067321970512335936, guid: 53b3e7ab675fd5449b89dd21cb183fa4, type: 3}
+    - {fileID: 4759235803245282781, guid: 9eb6930b12d50264c9ce41b70942b6fa, type: 3}
+    - {fileID: 8812311110016438338, guid: 3d6165711ef596d40bbe11e9cb1921b6, type: 3}
+    - {fileID: 5601746867506224184, guid: 18bcd69b624a8b740a97eff03cbb23e0, type: 3}
+    - {fileID: 8773540127338999185, guid: 065aa4b45ca5373479cfbaeabdb29854, type: 3}
+    - {fileID: 1412028951591543717, guid: 30b3dc0a051f27e4b913c03f31e5262b, type: 3}
+  - type: Huge
+    gameObjects:
+    - {fileID: 6085900226609018748, guid: 40aabf15e01f7ad4ea1d88ea20d795f1, type: 3}
+    - {fileID: 545499106667327110, guid: 2bfd7e83d6426f94b9a3391d916b5738, type: 3}
+    - {fileID: 7490593391315278593, guid: 003bcb295219a434cadc674efc80dfbc, type: 3}
+    - {fileID: 6797090133392834141, guid: 600ecf17d94f8bf4d8df82fd88c256b0, type: 3}
+    - {fileID: 5047720021168485667, guid: 48841d8f9c3fa00468f5dee969a69854, type: 3}
