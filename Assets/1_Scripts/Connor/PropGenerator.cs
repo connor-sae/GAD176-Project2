@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PropGenerator : MarkerItemGenerator
+namespace GAD176.Connor
 {
-    void Start()
+    public class PropGenerator : MarkerItemGenerator
     {
-        Generate(GenerationManager.Instance.activeRoomGroup.props);
+        void Start()
+        {
+            Generate(GenerationManager.Instance.activeRoomGroup.props);
+        }
     }
 }

@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomGenerator : MarkerItemGenerator
+namespace GAD176.Connor
 {
-
-
-    void Start()
+    public class RoomGenerator : MarkerItemGenerator
     {
-        Generate(GenerationManager.Instance.activeRoomGroup.rooms);
+
+
+        void Start()
+        {
+            Generate(GenerationManager.Instance.activeRoomGroup.rooms);
+        }
     }
 }
