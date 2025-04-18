@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if(other.TryGetComponent<IKillable>(out IKillable triggerer))
+        {
+            OntrapTriggered(triggerer);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    protected virtual void OntrapTriggered(IKillable triggerer)
     {
-        
+        Debug.Log($"{name} Triggered");
     }
 }
