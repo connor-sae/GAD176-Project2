@@ -1198,17 +1198,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1785259607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443efdde9980cac44a82488c323d63e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 43dd2b4eec1413f469ad4e054d3efa90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerRotator: {fileID: 1388791236}
-  rotateSpeed: 270
+  rotateSpeed: 180
   walkSpeed: 3
   crouchSpeed: 1.5
   cameraHolder: {fileID: 1453600509}
-  sensitivty: 180
-  maxLookVertical: 35
-  minLookVertical: -10
+  sensitivty: 100
+  maxLookVertical: 90
+  minLookVertical: -90
   playerAnimater: {fileID: 1651553717}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

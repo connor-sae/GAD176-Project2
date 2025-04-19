@@ -41,7 +41,7 @@ namespace GAD176.Connor
 
         void Movement()
         {
-            Vector2 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+            Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
             float speed;
 
             crouching = Input.GetKey(KeyCode.LeftControl);
