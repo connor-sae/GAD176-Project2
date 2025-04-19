@@ -5,7 +5,7 @@ using UnityEngine;
 namespace GAD176.Connor
 {
 
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IRagdoll
     {
 
         [Header("Movement")]
@@ -25,9 +25,12 @@ namespace GAD176.Connor
         [Header("Other")]
         public Animator playerAnimater;
 
+        private RagdollController ragdoll;
+
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
+            ragdoll = GetComponent<RagdollController>();
         }
 
         void Update()
@@ -85,6 +88,17 @@ namespace GAD176.Connor
             GameEvents.AlertEnemies(transform.position, range);
         }
 
+        public void Ragdoll(Vector3 origin, float force)
+        {
+            Kill();
+            ragdoll.Activate(true);
+            ragdoll.AddForceFromOrigin(origin, force);
+        }
+
+        public void Kill()
+        {
+            Debug.Log("ded");
+        }
     }
 
 }
