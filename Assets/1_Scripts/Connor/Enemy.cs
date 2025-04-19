@@ -99,11 +99,21 @@ public class Enemy : VisionConeDetection, IAlertable
 
     void OnDrawGizmos()
     {
-        foreach(Transform patrolPoint in patrolPoints)
+        for(int i = 0; i < patrolPoints.Length - 1; i++)
         {   
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(patrolPoint.position, 0.5f);
+            Gizmos.DrawWireSphere(patrolPoints[i].position, 0.5f);
+
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(patrolPoints[i].position, patrolPoints[i+1].position);
         }
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(patrolPoints[^1].position, 0.5f);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(patrolPoints[^1].position, patrolPoints[0].position);
+        
     }
 
 }
