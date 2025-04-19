@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundTrap : MonoBehaviour
+public class SoundTrap : Trap
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float alertDistance = 5f;
+    protected override void OntrapTriggered()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //use sphere overlap to alert all nearby alertables
+        Collider[] overlaps = Physics.OverlapSphere(transform.position, alertDistance);
+        foreach(Collider overlap in overlaps)
+        {
+            if(TryGetComponent<IAlertable>(out IAlertable toAlert))
+            {
+                toAlert.Alert(transform.position);
+            }
+        }
+    
+        base.OntrapTriggered();
     }
 }
