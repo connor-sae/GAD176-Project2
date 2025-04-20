@@ -8,7 +8,7 @@ namespace GAD176.Connor
     {
 
 
-        void Start()
+        void Awake()
         {
             Generate(GenerationManager.Instance.activeRoomGroup.rooms);
         }

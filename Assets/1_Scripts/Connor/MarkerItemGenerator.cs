@@ -46,6 +46,7 @@ namespace GAD176.Connor
                     }
 
                     GameObject itemGenerated = Instantiate(quatntumToRealize, marker.transform.position, randomRot);
+                    itemGenerated.transform.parent = transform;
                     Destroy(marker.gameObject);
 
                 }
