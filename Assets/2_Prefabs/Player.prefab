@@ -155,7 +155,7 @@ MonoBehaviour:
   maxLookVertical: 90
   minLookVertical: -90
   playerAnimater: {fileID: 194898754845846138}
-  walkAlertRange: 5
+  walkAlertRange: 4
   takeDownDistance: 1.2
   takeDownOrigin: {fileID: 3955317616198355570}
   detectionTarget: {fileID: 8682694385362628047}

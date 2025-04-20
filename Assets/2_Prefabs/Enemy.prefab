@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb4c292052f4d24a9f6f00a28afd839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewConeAngle: 45
-  viewConeDistance: 8
+  viewConeAngle: 50
+  viewConeDistance: 9
   viewOrigin: {fileID: 2078854970095197969}
   patrolPoints:
   - {fileID: 3948332309028816246}
