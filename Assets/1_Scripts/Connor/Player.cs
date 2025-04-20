@@ -26,6 +26,7 @@ namespace GAD176.Connor
         public Animator playerAnimater;
 
         private RagdollController ragdoll;
+        [SerializeField] float walkAlertRange = 1.5f;
 
         private void Start()
         {
@@ -41,7 +42,7 @@ namespace GAD176.Connor
 
         void Movement()
         {
-            Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+            Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
             float speed;
 
             crouching = Input.GetKey(KeyCode.LeftControl);
@@ -60,6 +61,9 @@ namespace GAD176.Connor
                 playerRotator.transform.rotation = Quaternion.RotateTowards(playerRotator.transform.rotation, desiredRotation, rotateSpeed * Time.deltaTime);
 
                 transform.position += playerRotator.transform.forward * speed * Time.deltaTime;
+
+                if(!crouching)
+                    AlertEnemies(walkAlertRange);
             }
 
             playerAnimater.SetBool("Crouching", crouching);
@@ -85,7 +89,15 @@ namespace GAD176.Connor
 
         void AlertEnemies(float range)
         {
-            GameEvents.AlertEnemies(transform.position, range);
+            //use sphere overlap to alert all nearby alertables
+            Collider[] overlaps = Physics.OverlapSphere(transform.position, range);
+            foreach(Collider overlap in overlaps)
+            {
+                if(TryGetComponent<IAlertable>(out IAlertable toAlert))
+                {
+                    toAlert.Alert(transform.position);
+                }
+            }
         }
 
         public void Ragdoll(Vector3 origin, float force)
