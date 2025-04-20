@@ -17,13 +17,18 @@ namespace GAD176.Connor
         protected bool Detect(Player player)
         {
             Vector3 targetDirection = player.detectionTarget.position - viewOrigin.position;
-            //
+            //ignore vertical difference
+            targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z).normalized;
+            
             float angleDifference = Vector3.Angle(transform.forward, targetDirection);
 
             if (angleDifference < viewConeAngle && targetDirection.magnitude < viewConeDistance)
             {
-                Physics.Raycast(viewOrigin.position, targetDirection, out RaycastHit hit, targetDirection.magnitude);
-                return hit.collider == player.activeCollider;
+                if(Physics.Raycast(viewOrigin.position, targetDirection, out RaycastHit hit, viewConeDistance))
+                {
+                    Debug.Log(hit.collider.name);
+                    return hit.collider == player.activeCollider;
+                }
             }
             return false;
         }

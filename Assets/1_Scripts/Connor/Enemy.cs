@@ -31,7 +31,6 @@ namespace GAD176.Connor
         
         public void Alert(Vector3 alertOrigin)
         {
-            Debug.Log("got alert");
             if(searchRoutine != null)
                 StopCoroutine(searchRoutine);
 
