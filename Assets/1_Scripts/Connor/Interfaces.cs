@@ -9,3 +9,8 @@ public interface IKillable
 {
     public void Kill();
 }
+
+public interface IRagdoll : IKillable
+{
+    public void Ragdoll(Vector3 origin, float force);
+}
