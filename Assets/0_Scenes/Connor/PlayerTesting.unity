@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRotator: {fileID: 1388791236}
-  rotateSpeed: 180
+  rotateSpeed: 200
   walkSpeed: 3
   crouchSpeed: 1.5
   cameraHolder: {fileID: 1453600509}
@@ -1210,6 +1210,7 @@ MonoBehaviour:
   maxLookVertical: 90
   minLookVertical: -90
   playerAnimater: {fileID: 1651553717}
+  walkAlertRange: 1.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
