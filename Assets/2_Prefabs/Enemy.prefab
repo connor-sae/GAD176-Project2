@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewConeAngle: 45
-  viewConeDistance: 4
+  viewConeDistance: 8
   viewOrigin: {fileID: 2078854970095197969}
   patrolPoints:
   - {fileID: 3948332309028816246}
@@ -145,7 +145,7 @@ MonoBehaviour:
   - {fileID: 4088716320765868038}
   rotateSpeed: 180
   patrolSpeed: 1
-  searchSpeed: 2
+  searchSpeed: 1.5
   searchTime: 5
   takeDownLieniency: 50
 --- !u!114 &4477675503241564598
@@ -281,7 +281,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6166625831843368639}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7746f1f2d2a05f443a65b13df3403501, type: 2}
   m_CullingMode: 0
@@ -443,6 +443,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6334eddf3cecfec40a988a39892dbbfe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2534075786819739942}
     - targetCorrespondingSourceObject: {fileID: -893919212700222433, guid: 6334eddf3cecfec40a988a39892dbbfe, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5088608711103699619}
@@ -550,6 +553,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6334eddf3cecfec40a988a39892dbbfe, type: 3}
   m_PrefabInstance: {fileID: 18145887499421488}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2534075786819739942
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901034692059642465}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7746f1f2d2a05f443a65b13df3403501, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2429508274267224140 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6775894948083892356, guid: 6334eddf3cecfec40a988a39892dbbfe, type: 3}

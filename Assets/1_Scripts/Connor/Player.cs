@@ -37,6 +37,23 @@ namespace GAD176.Connor
         [SerializeField] Transform takeDownOrigin;
         public Transform detectionTarget;
 
+        //Disable script if the game is over
+        void OnEnable()
+        {
+            GameEvents.OnGameLose += DisableScript;
+            GameEvents.OnGameWin += DisableScript;
+        }
+        void OnDisable()
+        {
+            GameEvents.OnGameLose -= DisableScript;
+            GameEvents.OnGameWin -= DisableScript;
+        }
+        
+        private void DisableScript()
+        {
+            enabled = false;
+        }
+
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -48,7 +65,7 @@ namespace GAD176.Connor
             Look();
             Movement();
             
-            //try takedown
+            //try takedown enemy
             if(Input.GetMouseButtonDown(0))
             {
                 Collider[] overlaps = Physics.OverlapSphere(takeDownOrigin.position, takeDownDistance);
@@ -69,7 +86,7 @@ namespace GAD176.Connor
             if (crouching)
             {
                 speed = crouchSpeed;
-                crouchCamera.Priority = 15;
+                crouchCamera.Priority = 15; //swap camera position
             }
             else
             {
@@ -77,14 +94,16 @@ namespace GAD176.Connor
                 crouchCamera.Priority = 5;
             }
 
-                
+            //if moving
             if (movement.magnitude > 0)
-            {
+            {   
+                //rotate towards input direction reletive to camera
                 float movementAngle = Mathf.Atan2(movement.x, movement.y) * Mathf.Rad2Deg;
                 Quaternion desiredRotation = Quaternion.Euler(0, movementAngle + cameraYAngle, 0);
 
                 playerRotator.transform.rotation = Quaternion.RotateTowards(playerRotator.transform.rotation, desiredRotation, rotateSpeed * Time.deltaTime);
 
+                //use rigidbody movement to prevent jitter
                 activeRB.velocity = playerRotator.transform.forward * speed;
 
                 if(!crouching)
@@ -101,14 +120,17 @@ namespace GAD176.Connor
 
             Vector2 currentRotation = cameraHolder.transform.rotation.eulerAngles;
 
+            //ensure rotation values are interpreted between -180 to 180 rotation jumping from 0 to 360
             if (currentRotation.x >= 180)
                 currentRotation.x -= 360;
 
+            //clamp vertical look roation
             float lookHorizontal = currentRotation.y + mouseMovement.x;
             float lookVertical = Mathf.Clamp(currentRotation.x - mouseMovement.y, minLookVertical, maxLookVertical);
 
             cameraHolder.rotation = Quaternion.Euler(lookVertical, lookHorizontal, 0);
 
+            //used to caluculate movement direction
             cameraYAngle = lookHorizontal;
         }
 

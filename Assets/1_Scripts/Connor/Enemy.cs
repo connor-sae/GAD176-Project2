@@ -55,6 +55,7 @@ namespace GAD176.Connor
             if(Detect(targetPlayer))
             {
                 //increase suspiction
+                GameManager.Instance.IncreaseSuspition();
                 Alert(targetPlayer.detectionTarget.position);
             }
 
@@ -113,6 +114,7 @@ namespace GAD176.Connor
             if(Vector3.Angle(direction, transform.forward) > 180 - takeDownLieniency)
             {
                 Ragdoll(origin, 0.1f);
+                GameManager.Instance.CheckEnemies();
             }
         }
 

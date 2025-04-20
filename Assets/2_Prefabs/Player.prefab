@@ -147,16 +147,16 @@ MonoBehaviour:
   activeRB: {fileID: 5307443473199624067}
   activeCollider: {fileID: 3388811813020180666}
   rotateSpeed: 340
-  walkSpeed: 3
-  crouchSpeed: 1.5
+  walkSpeed: 5
+  crouchSpeed: 2.5
   cameraHolder: {fileID: 2740442104260262076}
   crouchCamera: {fileID: 6983868951039747394}
   sensitivty: 100
   maxLookVertical: 90
   minLookVertical: -90
   playerAnimater: {fileID: 194898754845846138}
-  walkAlertRange: 2
-  takeDownDistance: 0.8
+  walkAlertRange: 5
+  takeDownDistance: 1.2
   takeDownOrigin: {fileID: 3955317616198355570}
   detectionTarget: {fileID: 8682694385362628047}
 --- !u!114 &4028472719949698299
