@@ -29,6 +29,7 @@ namespace GAD176.Connor
             {
                 player.activeCollider.enabled = !active;
                 player.playerAnimater.enabled = !active;
+                player.activeRB.isKinematic = active;
                 player.enabled = !active;
             }
             if(TryGetComponent<Enemy>(out Enemy enemy))

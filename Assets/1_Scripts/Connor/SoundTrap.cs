@@ -2,21 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundTrap : Trap
+namespace GAD176.Connor
 {
-    [SerializeField] float alertDistance = 5f;
-    protected override void OntrapTriggered()
+    public class SoundTrap : Trap
     {
-        //use sphere overlap to alert all nearby alertables
-        Collider[] overlaps = Physics.OverlapSphere(transform.position, alertDistance);
-        foreach(Collider overlap in overlaps)
+        [SerializeField] float alertDistance = 5f;
+        protected override void OntrapTriggered()
         {
-            if(TryGetComponent<IAlertable>(out IAlertable toAlert))
+            //use sphere overlap to alert all nearby alertables
+            Collider[] overlaps = Physics.OverlapSphere(transform.position, alertDistance);
+            foreach(Collider overlap in overlaps)
             {
-                toAlert.Alert(transform.position);
+                if(TryGetComponent<IAlertable>(out IAlertable toAlert))
+                {
+                    toAlert.Alert(transform.position);
+                }
             }
+        
+            base.OntrapTriggered();
         }
-    
-        base.OntrapTriggered();
+
+        private void OnDrawGizmos() 
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, alertDistance);
+        }
     }
+
 }

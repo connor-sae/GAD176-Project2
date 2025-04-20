@@ -2,26 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosiveTrap : Trap
+namespace GAD176.Connor
 {
-    [SerializeField] private float explodeRadius = 2f;
-    [SerializeField] private float explosiveForce;
-    protected override void OntrapTriggered()
+    public class ExplosiveTrap : Trap
     {
-        //use sphere overlap to explode all nearby IKillables
-        Collider[] overlaps = Physics.OverlapSphere(transform.position, explodeRadius);
-        foreach(Collider overlap in overlaps)
+        [SerializeField] private float explodeRadius = 2f;
+        [SerializeField] private float explosiveForce;
+        protected override void OntrapTriggered()
         {
-            if(TryGetComponent<IKillable>(out IKillable killable))
+            //use sphere overlap to explode all nearby IKillables
+            Collider[] overlaps = Physics.OverlapSphere(transform.position, explodeRadius);
+            foreach(Collider overlap in overlaps)
             {
-                if(killable is IRagdoll)
-                    (killable as IRagdoll).Ragdoll(transform.position, explosiveForce);
-                else
-                    killable.Kill();
+                if(overlap.TryGetComponent<IKillable>(out IKillable killable))
+                {
+                    if(killable is IRagdoll)
+                        (killable as IRagdoll).Ragdoll(transform.position, explosiveForce);
+                    else
+                        killable.Kill();
+                }
             }
-        }
-        
+            
 
-        base.OntrapTriggered();
+            base.OntrapTriggered();
+        }
+        private void OnDrawGizmos() 
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, explodeRadius);
+        }
     }
+
+    
 }

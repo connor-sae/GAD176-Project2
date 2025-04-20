@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trap : MonoBehaviour
+namespace GAD176.Connor
 {
-
-    [SerializeField] bool destroyOnTrigger;
-    [SerializeField] float triggerDelay;
-    void OnTriggerEnter(Collider other)
+    public class Trap : MonoBehaviour
     {
-        if(other.GetComponent<IKillable>() != null)
+
+        [SerializeField] bool destroyOnTrigger;
+        [SerializeField] float triggerDelay;
+        void OnTriggerEnter(Collider other)
         {
-            Invoke("OntrapTriggered", triggerDelay);
+            if(other.GetComponent<IKillable>() != null)
+            {
+                Invoke("OntrapTriggered", triggerDelay);
+            }
         }
-    }
 
 
-    /// <summary>
-    /// Called when an IKillable object enters the trigger volume and destroys the Tap if destroy on trigger is true
-    /// </summary>
-    /// <param name="triggerer">the Ikillable that enteres the trigger volume</param>
-    protected virtual void OntrapTriggered()
-    {
-        Debug.Log($"{name} Triggered");
-        if(destroyOnTrigger) Destroy(gameObject);
+        /// <summary>
+        /// Called when an IKillable object enters the trigger volume and destroys the Tap if destroy on trigger is true
+        /// </summary>
+        /// <param name="triggerer">the Ikillable that enteres the trigger volume</param>
+        protected virtual void OntrapTriggered()
+        {
+            Debug.Log($"{name} Triggered");
+            if(destroyOnTrigger) Destroy(gameObject);
+        }
     }
 }

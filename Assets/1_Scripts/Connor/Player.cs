@@ -14,7 +14,7 @@ namespace GAD176.Connor
 
         [Header("Movement")]
         [SerializeField] private Transform playerRotator;
-        [SerializeField] private Rigidbody activeRB;
+        public Rigidbody activeRB;
         public Collider activeCollider;
         [SerializeField] private float rotateSpeed = 180;
         [SerializeField] private float walkSpeed = 3;
