@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VisionConeDetection : MonoBehaviour
+namespace GAD176.Connor
 {
-    [SerializeField] float viewConeAngle = 45;
-    [SerializeField] float viewConeDistance = 4;
-    [SerializeField] Transform viewOrigin;
-
-    /// <summary>
-    /// Detects whether the given Collider is within the view Cone and is unobstructed from the view Origin
-    /// </summary>
-    /// <returns>whether the object is detected</returns>
-    protected bool Detect(Collider targetCollider)
+    public class VisionConeDetection : MonoBehaviour
     {
-        Vector3 targetDirection = targetCollider.transform.position - viewOrigin.position;
-        //
-        float angleDifference = Vector3.Angle(transform.forward, targetDirection);
+        [SerializeField] float viewConeAngle = 45;
+        [SerializeField] float viewConeDistance = 4;
+        [SerializeField] Transform viewOrigin;
 
-        if (angleDifference < viewConeAngle && targetDirection.magnitude < viewConeDistance)
+        /// <summary>
+        /// Detects whether the given Collider is within the view Cone and is unobstructed from the view Origin
+        /// </summary>
+        /// <returns>whether the object is detected</returns>
+        protected bool Detect(Player player)
         {
-            Physics.Raycast(viewOrigin.position, targetDirection, out RaycastHit hit, targetDirection.magnitude);
-            return hit.collider == targetCollider;
+            Vector3 targetDirection = player.detectionTarget.position - viewOrigin.position;
+            //
+            float angleDifference = Vector3.Angle(transform.forward, targetDirection);
+
+            if (angleDifference < viewConeAngle && targetDirection.magnitude < viewConeDistance)
+            {
+                Physics.Raycast(viewOrigin.position, targetDirection, out RaycastHit hit, targetDirection.magnitude);
+                return hit.collider == player.activeCollider;
+            }
+            return false;
         }
-        return false;
     }
 }

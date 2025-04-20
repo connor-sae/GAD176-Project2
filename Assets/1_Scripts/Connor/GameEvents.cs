@@ -6,7 +6,8 @@ namespace GAD176.Connor
 {
     public static class GameEvents
     {
-        public delegate void alertDelegate(Vector3 origin, float radius);
-        public static alertDelegate AlertEnemies;
+        public delegate void TriggerDelegate();
+        public static TriggerDelegate OnGameLose;
+        public static TriggerDelegate OnGameWin;
     }
 }
