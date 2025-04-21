@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyOnTrigger: 0
   triggerDelay: 0
-  alertDistance: 7
+  alertDistance: 30
 --- !u!54 &-691402854285498248
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ namespace GAD176.Connor
             Collider[] overlaps = Physics.OverlapSphere(transform.position, alertDistance);
             foreach(Collider overlap in overlaps)
             {
-                if(TryGetComponent<IAlertable>(out IAlertable toAlert))
+                if(overlap.TryGetComponent<IAlertable>(out IAlertable toAlert))
                 {
                     toAlert.Alert(transform.position);
                 }

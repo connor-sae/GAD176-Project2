@@ -338,9 +338,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathways:
-  - {fileID: 4935974808366298722, guid: 804539d649c5adb47b49d87de4e43a8f, type: 3}
+  - {fileID: 6720985766289306500, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
   activeRoomGroup: {fileID: 11400000, guid: 17cc9203d4a20df40ab62f1386d10f08, type: 2}
   generateForPlay: 1
+  generateOnAwake: 1
 --- !u!4 &1924395254
 Transform:
   m_ObjectHideFlags: 0
@@ -364,54 +365,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[5]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[6]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[13]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[14]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[15]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[16]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159992356231705138, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
-      propertyPath: generationMarkers.Array.data[17]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5071556779843486778, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -455,6 +408,10 @@ PrefabInstance:
     - target: {fileID: 6720985766289306500, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
       propertyPath: m_Name
       value: OutsideLevel2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720985766289306500, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
