@@ -26,7 +26,6 @@ namespace GAD176.Connor
             {
                 if(Physics.Raycast(viewOrigin.position, targetDirection, out RaycastHit hit, viewConeDistance))
                 {
-                    Debug.Log(hit.collider.name);
                     return hit.collider == player.activeCollider;
                 }
             }
