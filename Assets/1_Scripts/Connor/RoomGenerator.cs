@@ -7,7 +7,6 @@ namespace GAD176.Connor
     public class RoomGenerator : MarkerItemGenerator
     {
 
-
         void Awake()
         {
             Generate(GenerationManager.Instance.activeRoomGroup.rooms);
