@@ -15,6 +15,7 @@ namespace GAD176.Connor
         private GameObject generatedPathway;
 
         [SerializeField] bool generateForPlay = true;
+        [SerializeField] bool generateOnAwake = true;
 
         private void Awake()
         {
@@ -22,11 +23,9 @@ namespace GAD176.Connor
                 Instance = this;
             else
                 Destroy(gameObject);
-        }
 
-        void Start()
-        {
-            GenerateLevel();
+            if(generateOnAwake)
+                GenerateLevel();
         }
 
         public void GenerateLevel()

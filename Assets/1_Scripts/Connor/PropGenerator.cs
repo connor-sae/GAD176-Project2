@@ -6,8 +6,9 @@ namespace GAD176.Connor
 {
     public class PropGenerator : MarkerItemGenerator
     {
-        void Start()
+        protected override void Awake()
         {
+            base.Awake();
             Generate(GenerationManager.Instance.activeRoomGroup.props);
         }
     }

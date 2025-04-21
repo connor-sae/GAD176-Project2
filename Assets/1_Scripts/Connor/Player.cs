@@ -159,6 +159,7 @@ namespace GAD176.Connor
         public void Kill()
         {
             Debug.Log("ded");
+            GameEvents.OnGameLose?.Invoke();
         }
     }
 

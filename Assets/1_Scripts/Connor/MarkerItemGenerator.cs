@@ -6,8 +6,12 @@ namespace GAD176.Connor
 {
     public class MarkerItemGenerator : MonoBehaviour
     {
-        [SerializeField]
         private Marker[] generationMarkers;
+
+        protected virtual void Awake() 
+        {
+            generationMarkers = GetComponentsInChildren<Marker>();
+        }
 
         /// <summary>
         /// Generates Items at the points specified by the markers using their ID and their corrosponding GameObjects in the dictionary
