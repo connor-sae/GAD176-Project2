@@ -59,7 +59,8 @@ namespace GAD176.Connor
                 increaseSus = false;
                 if(suspition >= 1)
                 {
-                    GameEvents.OnGameLose?.Invoke();
+                    //funny ragdoll
+                    FindAnyObjectByType<Player>().Ragdoll(Vector3.zero, 0);
                 }
             }
             else
