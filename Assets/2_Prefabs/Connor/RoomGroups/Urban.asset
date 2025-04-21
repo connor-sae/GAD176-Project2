@@ -64,3 +64,7 @@ MonoBehaviour:
     - {fileID: 7490593391315278593, guid: 003bcb295219a434cadc674efc80dfbc, type: 3}
     - {fileID: 6797090133392834141, guid: 600ecf17d94f8bf4d8df82fd88c256b0, type: 3}
     - {fileID: 5047720021168485667, guid: 48841d8f9c3fa00468f5dee969a69854, type: 3}
+  - type: Trap
+    gameObjects:
+    - {fileID: 195044394074760804, guid: 6a641696207584a43844c044f47541d7, type: 3}
+    - {fileID: 3595137104409164842, guid: 5556782bd0701504199bf2a0f4819392, type: 3}
