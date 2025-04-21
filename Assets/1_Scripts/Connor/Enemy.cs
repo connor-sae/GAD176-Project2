@@ -114,7 +114,6 @@ namespace GAD176.Connor
             if(Vector3.Angle(direction, transform.forward) > 180 - takeDownLieniency)
             {
                 Ragdoll(origin, 0.1f);
-                GameManager.Instance.CheckEnemies();
             }
         }
 
@@ -128,6 +127,8 @@ namespace GAD176.Connor
         public void Kill()
         {
             Debug.Log("ded");
+            enabled = false;
+            GameManager.Instance.CheckEnemies();
         }
 
         enum EnemyState
