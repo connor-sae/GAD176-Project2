@@ -35,7 +35,6 @@ namespace GAD176.Connor
             if(TryGetComponent<Enemy>(out Enemy enemy))
             {
                 enemy.GetComponent<Collider>().enabled = !active;
-                enemy.enabled = !active;
             }
 
             foreach(Collider collider in ragdollColliders)
