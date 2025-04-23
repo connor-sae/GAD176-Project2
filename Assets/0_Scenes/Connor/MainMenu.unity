@@ -401,6 +401,7 @@ MonoBehaviour:
   pathways:
   - {fileID: 4935974808366298722, guid: 804539d649c5adb47b49d87de4e43a8f, type: 3}
   - {fileID: 6720985766289306500, guid: 20dc7fca94b7f6448b798bbc745b86f1, type: 3}
+  - {fileID: 5356845240680956757, guid: 7f2920ef7664d824e8b15399248f5633, type: 3}
   activeRoomGroup: {fileID: 11400000, guid: 17cc9203d4a20df40ab62f1386d10f08, type: 2}
   generateForPlay: 0
   generateOnAwake: 1
