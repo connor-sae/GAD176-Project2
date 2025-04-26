@@ -6,10 +6,11 @@ namespace DanielGAD176
 {
     public class Traps : MonoBehaviour
     {
+        [SerializeField] BoxCollider BoxCollider;
         // Start is called before the first frame update
-        void Start()
+        protected virtual void Start()
         {
-            
+            BoxCollider = this.GetComponent<BoxCollider>();
         }
 
         // Update is called once per frame
@@ -17,18 +18,9 @@ namespace DanielGAD176
         {
             
         }
-        private void OnTriggerEnter(Collider other)
+        protected virtual void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Enemy"))
-            {
-                Destroy(other.gameObject);
-                Destroy(this.gameObject);
-            }
-            if (other.CompareTag("Player"))
-            {
-                Debug.Log("you died");
-                Destroy(this.gameObject);
-            }
+            BoxCollider.enabled = false;
         }
     }
 
