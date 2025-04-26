@@ -16,10 +16,10 @@ namespace DanielGAD176
     }
     public class EnemyDetection : MonoBehaviour
     {
-        [SerializeField] GameObject player;
+        public GameObject player;
+        public float susMeter = 0f;
         [SerializeField] float maxConeDistance = 5f;
         [SerializeField] float maxConeAngle = 45f;
-        [SerializeField] float susMeter = 0f;
         [SerializeField] float susIncreaseRate = 10f;
         [SerializeField] float maxSus = 100f;
 
@@ -30,9 +30,9 @@ namespace DanielGAD176
         private EnemyState currentState = EnemyState.Patrolling;
 
         // For testing
-        [SerializeField] private float patrolMoveDistance = 3f;
-        [SerializeField] private float patrolMoveSpeed = 1.5f;
-        [SerializeField] private float patrolRotateSpeed = 120f; // Degrees per second
+        [SerializeField] float patrolMoveDistance = 3f;
+        [SerializeField] float patrolMoveSpeed = 1.5f;
+        [SerializeField] float patrolRotateSpeed = 120f;
         private bool isTurning = false;
         private float distanceMoved = 0f;
         private float rotationRemaining = 0f;
@@ -158,15 +158,15 @@ namespace DanielGAD176
                 if (distanceMoved >= patrolMoveDistance)
                 {
                     isTurning = true;
-                    rotationRemaining = 90f; // Start 90 degree turn
-                    distanceMoved = 0f; // Reset for next side
+                    rotationRemaining = 90f;
+                    distanceMoved = 0f; 
                 }
             }
             else
             {
                 // Rotate 90 degrees
                 float rotateStep = patrolRotateSpeed * Time.deltaTime;
-                rotateStep = Mathf.Min(rotateStep, rotationRemaining); // Don't overshoot
+                rotateStep = Mathf.Min(rotateStep, rotationRemaining);
 
                 transform.Rotate(Vector3.up, rotateStep);
                 rotationRemaining -= rotateStep;
