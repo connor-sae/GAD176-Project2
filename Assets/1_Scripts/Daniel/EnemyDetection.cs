@@ -12,27 +12,46 @@ namespace DanielGAD176
         [SerializeField] GameObject player;
         [SerializeField] float maxConeDistance = 5f;
         [SerializeField] float maxConeAngle = 45f;
-        int counter = 0;
-
-        // Start is called before the first frame update
+        [SerializeField] float susMeter = 0f;
+        [SerializeField] float susIncreaseRate = 10f;
+        [SerializeField] float maxSus = 100f;
+        
+        // to use this code make your enemies inherit form this and use FixedUpdate for VisualDetection (IMPORTANT).
         void Start()
         {
-            //You need to change the tag of the player to "Player" for this to work.
-            player = GameObject.FindGameObjectWithTag("Player");
+            
+             //You need to change the tag of the player to "Player" for this to work.
+            if (player == null)
+            {
+                player = GameObject.FindGameObjectWithTag("Player");
+            }
             if (player == null)
             {
                 Debug.LogError("tag player with Player");
             }
         }
 
-        // Update is called once per frame
-        void FixedUpdate()
+        
+        protected virtual void FixedUpdate()
         {
-
-            VisualDetection();
+            // if player detected increses suspicion based on time in view field.
+            if (VisualDetection()) 
+            {
+                susMeter += susIncreaseRate * Time.deltaTime;
+                susMeter = Mathf.Min(susMeter, maxSus);
+                Debug.Log(susMeter);
+            }
+            else
+            {
+                susMeter -= susIncreaseRate * 0.5f * Time.deltaTime;
+                susMeter = Mathf.Max(susMeter, 0f);
+                Debug.Log(susMeter);
+            } 
         }
 
-        private bool VisualDetection()
+        // fuction that checks if player is within view cone of enemy using distance and angles.
+        // returns bool if detected or not.
+        protected virtual bool VisualDetection()
         {
             Vector3 distanceVector = player.transform.position - transform.position;
             distanceVector = new Vector3(distanceVector.x, 0, distanceVector.z);
@@ -45,6 +64,7 @@ namespace DanielGAD176
                 {
                     if (hit.collider.CompareTag("Player"))
                     {
+
                         Debug.Log("Player Detected");
                         return true;
                     }
@@ -52,7 +72,7 @@ namespace DanielGAD176
             }
             return false;
         }
-
+        // Draws detection lines for reference.     
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.yellow;
