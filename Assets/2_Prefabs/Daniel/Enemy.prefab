@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2767178084364277474}
   - component: {fileID: 1264894311283265}
   - component: {fileID: 8434009561308728480}
+  - component: {fileID: 5356491187583109840}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -120,9 +121,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  susMeter: 0
   maxConeDistance: 5
   maxConeAngle: 45
-  susMeter: 0
   susIncreaseRate: 10
   maxSus: 100
   moveSpeed: 0
@@ -158,3 +159,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &5356491187583109840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5078975647229402571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8dec2faa414b0243abf6db7c9f05364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPos: {fileID: 0}
+  hearingRadius: 5
+  moveThreshold: 0.1
+  player: {fileID: 0}

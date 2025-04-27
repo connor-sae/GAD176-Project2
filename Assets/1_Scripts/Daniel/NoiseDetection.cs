@@ -2,41 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoiseDetection : MonoBehaviour
+namespace DanielGAD176
 {
-    [SerializeField] private Transform player;
-    [SerializeField] private float hearingRadius = 5f;  
-    [SerializeField] private float moveThreshold = 0.1f;
 
-    private CharacterController playerController;
-
-    void Start()
+    public class NoiseDetection : MonoBehaviour
     {
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+        [SerializeField] private Transform playerPos;
+        [SerializeField] private float hearingRadius = 5f;  
+        [SerializeField] private float moveThreshold = 0.1f;
 
-        playerController = player.GetComponent<CharacterController>();
-        if (playerController == null)
-            Debug.LogError("Player needs a CharacterController!");
-    }
+        [SerializeField] private Player player;
 
-    void Update()
-    {        
-        if (playerController.velocity.magnitude < moveThreshold)
-            return;
+        private CharacterController playerController;
 
-        float distance = Vector3.Distance(transform.position, player.position);
-        if (distance > hearingRadius)
-            return;
+        void Start()
+        {
+            player = FindObjectOfType<Player>();
 
-        Vector3 lookPos =(player.position);
-        lookPos.y = transform.position.y;        
-        transform.LookAt(lookPos);
-    }
+            if (playerPos == null)
+                playerPos = GameObject.FindGameObjectWithTag("Player").transform;
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, hearingRadius);
-    }
-} 
+            playerController = playerPos.GetComponent<CharacterController>();
+            if (playerController == null)
+                Debug.LogError("Player needs a CharacterController!");
+        }
+
+        void Update()
+        {        
+            if (playerController.velocity.magnitude < moveThreshold)
+                return;
+
+            float distance = Vector3.Distance(transform.position, playerPos.position);
+            if (distance > hearingRadius)
+                return;
+
+            if (player.silentBoots == false)
+            {
+                Vector3 lookPos =(playerPos.position);
+                lookPos.y = transform.position.y;        
+                transform.LookAt(lookPos);
+            }
+        }
+
+        void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(transform.position, hearingRadius);
+        }
+    } 
+}

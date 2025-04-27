@@ -17,11 +17,11 @@ namespace DanielGAD176
 
         protected override void OnTriggerEnter(Collider other)
         {
-            if( other.CompareTag("Player") || other.CompareTag("Enemy"))
+            if ((other.CompareTag("Player") && player.trapImmunity == false) || other.CompareTag("Enemy"))
             {
                 StartCoroutine(CaptureCoroutine(other));
                 base.OnTriggerEnter(other);
-            }
+            }                      
         }
 
         IEnumerator CaptureCoroutine(Collider target)
